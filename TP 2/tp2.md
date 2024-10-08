@@ -93,6 +93,8 @@ PS C:\WINDOWS\system32> netstat -an | findstr 9999
 
 🌞 Inversez les rôles
 
+.\nc64.exe 10.111.222.223 9999
+
 [c lo](./netcat2.pcapng)
 
 🌞 Utilisez Wireshark pour capturer du trafic HTTP
@@ -143,3 +145,47 @@ PS C:\> netstat -a -b -n | Select-String steam -Context 0,1
 - 34622 → connecté à 216.239.36.223:443
 
 [c lo](./Steam.pcap)
+
+Discord :
+
+```powershell
+    TCP    10.33.78.234:2702      162.159.137.232:443    ESTABLISHED
+>  [Discord.exe]
+    TCP    10.33.78.234:2703      20.140.48.70:443       ESTABLISHED
+   [SearchHost.exe]
+    TCP    10.33.78.234:2704      162.159.136.234:443    ESTABLISHED
+>  [Discord.exe]
+    TCP    10.33.78.234:2705      150.171.70.254:443     ESTABLISHED
+   [SearchHost.exe]
+    TCP    127.0.0.1:6463         0.0.0.0:0              LISTENING
+>  [Discord.exe]
+    TCP    127.0.0.1:27060        0.0.0.0:0              LISTENING
+   [steam.exe]
+    UDP    0.0.0.0:51857          162.159.134.233:443
+>  [Discord.exe]
+    UDP    0.0.0.0:53135          162.159.61.3:443
+   [msedgewebview2.exe]
+    UDP    0.0.0.0:56309          162.159.136.232:443
+>  [Discord.exe]
+    UDP    0.0.0.0:58107          162.159.134.233:443
+>  [Discord.exe]
+    UDP    0.0.0.0:62343          *:*
+    Dnscache
+    UDP    0.0.0.0:65453          162.159.137.232:443
+>  [Discord.exe]
+    UDP    10.33.78.234:137       *:*
+   Impossible d'obtenir les informations de propriétaire
+```
+
+- 2702 → connecté à 162.159.137.232:443
+- 2703 → connecté à 20.140.48.70:443
+- 2704 → connecté à 162.159.136.234:443
+- 2705 → connecté à 150.171.70.254:443
+- 51857 → connecté à 162.159.134.233:443
+- 53135 → connecté à 162.159.61.3:443
+- 56309 → connecté à 162.159.136.232:443
+- 58107 → connecté à 162.159.134.233:443
+- 65453 → connecté à 162.159.137.232:443
+
+[c lo](./discord.pcap)
+
